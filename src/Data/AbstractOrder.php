@@ -4,15 +4,16 @@ namespace App\Data;
 
 abstract class AbstractOrder
 {
-    private int $id;
     public ?array $data;
 
-    abstract protected function loadOrderData(int $id): array;
+    private int $id;
 
     public function __construct(int $id)
     {
         $this->id = $id;
     }
+
+    abstract protected function loadOrderData(int $id): array;
 
     final public function getOrderId(): int
     {
